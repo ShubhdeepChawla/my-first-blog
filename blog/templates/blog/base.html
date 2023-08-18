@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first blog</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <h1><a href="/">Shubhdeep's Blogs</a></h1>
+        </div>
+    </header>
+
+
+    <nav>
+        <ul style="color: tomato;">
+            <li><a href="{% url 'about' %}">about</a></li>
+            
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'post_new' %}">ADD</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+
+    <main class="container">
+        <div class="row">
+            <div class="cols">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </main>
+</body>
+</html>

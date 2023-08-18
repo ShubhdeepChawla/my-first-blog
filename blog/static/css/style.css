@@ -1,0 +1,11 @@
+*{
+    font-family: lobster;
+}
+.container{
+    background-color: black;
+    color: bisque;
+}
+
+h1{
+    color: orange;
+}
